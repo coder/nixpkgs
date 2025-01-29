@@ -1121,6 +1121,7 @@ rec {
     , shell ? bashInteractive + "/bin/bash"
     , command ? null
     , run ? null
+    , maxLayers ? 100
     }:
       assert lib.assertMsg (! (drv.drvAttrs.__structuredAttrs or false))
         "streamNixShellImage: Does not work with the derivation ${drv.name} because it uses __structuredAttrs";
@@ -1212,7 +1213,7 @@ rec {
 
 
       in streamLayeredImage {
-        inherit name tag;
+        inherit name tag maxLayers;
         contents = [
           binSh
           usrBinEnv

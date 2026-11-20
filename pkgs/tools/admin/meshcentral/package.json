@@ -92,7 +92,7 @@
     "ssh2": "*",
     "image-size": "*",
     "acme-client": "*",
-    "aedes": "0.39.0",
+    "aedes": "1.1.1",
     "mysql": "*",
     "@mysql/xdevapi": "*",
     "mongodb": "4.1.0",
